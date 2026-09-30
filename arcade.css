@@ -42,17 +42,17 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 .skin-phantom .zs52-skinwash{filter:saturate(1.45) contrast(1.18) brightness(.67)}
 
 /* Portrait — clear two-button horizontal movement, large playfield, compact console deck. */
-.mode-portrait .zs52-screen{left:18px!important;right:18px!important;top:40px!important;bottom:148px!important}
+.mode-portrait .zs52-screen{left:18px!important;right:18px!important;top:40px!important;bottom:104px!important}
 .mode-portrait .zs52-topbtn{top:max(5px,env(safe-area-inset-top,0px))!important;width:44px!important;height:30px!important}
 .mode-portrait .zs52-topbtn.menu{left:10px!important}.mode-portrait .zs52-topbtn.pause{right:10px!important}
-.mode-portrait .zs52-move-zone{left:22px!important;bottom:24px!important;width:126px!important;height:62px!important}
-.mode-portrait .zs52-move-zone.flipped{left:auto!important;right:22px!important}
-.zs52-portrait-move{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;height:100%;align-items:center}
-.zs52-lrbtn{display:block;width:58px;height:58px;border:0;background-color:transparent;background-position:center;background-size:contain;background-repeat:no-repeat;touch-action:none}
+.mode-portrait .zs52-move-zone{left:16px!important;bottom:8px!important;width:110px!important;height:54px!important}
+.mode-portrait .zs52-move-zone.flipped{left:auto!important;right:16px!important}
+.zs52-portrait-move{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;height:100%;align-items:center}
+.zs52-lrbtn{display:block;width:52px;height:52px;border:0;background-color:transparent;background-position:center;background-size:contain;background-repeat:no-repeat;touch-action:none}
 .zs52-lrbtn.left{background-image:url('./control-left.png')}.zs52-lrbtn.right{background-image:url('./control-right.png')}
 .zs52-lrbtn.pressed{transform:translateY(2px) scale(.965);filter:brightness(.78) drop-shadow(0 2px 3px rgba(0,0,0,.45))!important}
-.mode-portrait .zs52-fire{right:22px!important;bottom:24px!important;width:126px!important;height:62px!important}
-.mode-portrait .zs52-fire.flipped{right:auto!important;left:22px!important}
+.mode-portrait .zs52-fire{right:16px!important;bottom:8px!important;width:110px!important;height:54px!important}
+.mode-portrait .zs52-fire.flipped{right:auto!important;left:16px!important}
 .mode-portrait .zs52-ticker{left:158px!important;right:136px!important;bottom:28px!important;min-height:30px;padding:6px 4px!important;display:grid;place-items:center;font-size:7px!important;background:rgba(4,6,7,.78)!important}
 
 /* Landscape — PSP layout. Controls live on the side pods, not on top of the game. */
@@ -275,3 +275,22 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
   .zs52-grenade{min-width:48px!important;min-height:48px!important}.zs52-grenade::before{border-width:1.5px;inset:-3px}
   .zs52-accuracy-badge{width:28px!important;height:28px!important;font-size:9px!important;bottom:-6px!important;right:-14px!important}
 }
+
+/* v5.27+ — Collapsible menu sections */
+.zs52-section-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;border:1px solid #2a4a50;background:#0a1619;color:#38d0ff;font:700 14px var(--cond);letter-spacing:.02em;width:100%;cursor:pointer;transition:all .2s ease}
+.zs52-section-header:hover{background:#0f1d22;border-color:#38d0ff}
+.zs52-section-header.focused{border-color:#38d0ff;box-shadow:inset 3px 0 #38d0ff,0 0 12px rgba(56,208,255,.35);background:#0f1b20}
+.zs52-section-header .material-symbols-rounded{font-size:22px;color:#38d0ff}
+.zs52-section-content{padding:10px 0;border-bottom:1px solid #1a2428;margin-bottom:8px}
+.zs52-cheat-list{display:grid;gap:6px;padding:0 14px}
+.zs52-cheat-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 10px;border:1px solid #333e43;background:#0d1316;color:#fff;text-align:left;font:700 12px var(--cond);width:100%;cursor:pointer;transition:all .15s ease}
+.zs52-cheat-row:hover{border-color:#38d0ff;background:#0f1d22}
+.zs52-cheat-row.focused{border-color:#38d0ff;box-shadow:inset 3px 0 #38d0ff,0 0 12px rgba(56,208,255,.35);background:#0f1b20}
+.zs52-cheat-row b{color:#f3d51f;display:block}
+.zs52-cheat-row small{color:#7f8b90;font-weight:400;font-size:10px;display:block;font-family:monospace;letter-spacing:.02em}
+.zs52-menu-skins{display:grid!important;grid-template-columns:1fr 1fr;gap:7px;max-height:none!important;overflow:visible!important;padding:0 14px}
+.zs52-code{display:grid!important;grid-template-columns:1fr auto!important;gap:6px!important;margin:10px 14px 8px!important;padding:0!important}
+.zs52-instructions{display:grid;gap:7px;padding:0 14px}
+.zs52-instructions article{padding:10px;border:1px solid #303b40;background:#0d1316}
+.zs52-instructions b,.zs52-instructions span{display:block}
+.zs52-instructions span{font-size:10px;color:#9ba6aa;line-height:1.45}
