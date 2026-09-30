@@ -567,7 +567,7 @@ function bindModal(){
   if(state.modal.type==='result')bindResultModal();if(state.modal.type==='report')$('#submitReportBtn')?.addEventListener('click',submitReport);
   if(state.modal.type==='profilePicture'){
     $$('.profile-zombie-choice').forEach(b=>b.addEventListener('click',function(){$$('.profile-zombie-choice').forEach(x=>x.classList.remove('selected'));this.classList.add('selected');$('#saveProfilePictureBtn').disabled=false;}));
-    $('#randomProfilePictureBtn')?.addEventListener('click',()=>{$$('.profile-zombie-choice').forEach(x=>x.classList.remove('selected'));$('#saveProfilePictureBtn').disabled=false;const selected=$('.profile-zombie-choice');if(selected)selected.classList.add('selected');});
+    $('#randomProfilePictureBtn')?.addEventListener('click',()=>{const choices=$$('.profile-zombie-choice');const random=choices[Math.floor(Math.random()*choices.length)];$$('.profile-zombie-choice').forEach(x=>x.classList.remove('selected'));if(random){random.classList.add('selected');$('#saveProfilePictureBtn').disabled=false;}});
     $('#saveProfilePictureBtn')?.addEventListener('click',saveProfilePicture);
   }
 }
