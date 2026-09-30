@@ -1,0 +1,51 @@
+ZC2 ARENA - PROFILE SYSTEM UPDATES
+==================================
+
+CHANGES COMPLETED:
+
+1. REMOVED ARCADE PROFILE REQUIREMENT:
+   - Deleted checkArcadeProfileSetup() function
+   - Deleted showArcadeProfileSetup() modal
+   - Deleted saveArcadeProfile() function
+   - Removed arcade profile modal requirement before game start
+   - Updated bindPage() to call open() directly
+
+2. IMPLEMENTED ZC2 ARENA APP PROFILE:
+   - Made player profile compulsory on signup
+   - Added profile_picture field to profiles table via loadPrivate()
+   - Profile pictures are zombie boss characters: jordan, glowinghumanity, debo, caffeinatedsloth, fatamy, drmantis
+
+3. RANDOM ZOMBIE ALLOCATION:
+   - When a new user creates an account, a random zombie is automatically assigned
+   - User can see the profile picture selection modal on first login to confirm/change it
+
+4. PROFILE PICTURE SELECTION MODAL:
+   - Added profilePictureModalHtml() function
+   - Added saveProfilePicture() function to save selection to database
+   - Modal shows 6 zombie boss options with names and images
+   - User can select a zombie or get random assignment
+   - Confirm selection saves to profiles.profile_picture
+
+5. SCORE REGISTRATION UPDATES:
+   - Updated submitScore() to save high_score and selected_skin to profiles table (not arcade_profiles)
+   - Updated selectSkin() to update profiles table instead of arcade_profiles
+   - Score registration now uses the ZC2 arena app profile
+
+6. LOGO SETUP:
+   - Saved ZC2 Arena logo as: zc2-arena-logo.png (2.7MB)
+   - Ready to be referenced as app icon in HTML/CSS
+
+DATABASE SCHEMA UPDATES NEEDED:
+- Add profile_picture column to profiles table (text, stores zombie ID)
+- Add high_score column to profiles table (integer, nullable)
+- Add selected_skin column to profiles table (text, nullable)
+- These columns can store skin/score data for the leaderboard
+
+FLOW:
+1. User signs up → new profile created with random zombie picture
+2. User first logs in → profile picture selection modal appears
+3. User selects/confirms profile picture → saved to database
+4. User plays Zombie Smash → score and selected skin saved to profiles table
+5. Leaderboard pulls high_score from profiles table (not arcade_profiles)
+
+NO MORE ARCADE PROFILE - ALL DATA IS IN ZC2 ARENA APP PROFILE!

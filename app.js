@@ -148,7 +148,10 @@ async function loadPrivate(){
   if(!p.data){
     const meta=state.session.user.user_metadata||{};const raw=(meta.gamertag||state.session.user.email?.split('@')[0]||'Player').replace(/[^A-Za-z0-9_. -]/g,'').slice(0,24)||'Player';
     const gamertag=raw+'-'+uid.slice(0,4).toUpperCase();
-    await supabase.from('profiles').upsert({id:uid,gamertag,platform:meta.platform||'Quest'},{onConflict:'id'});p=await supabase.from('profiles').select('*').eq('id',uid).maybeSingle();
+    const zombies=['jordan','glowinghumanity','debo','caffeinatedsloth','fatamy','drmantis'];
+    const randomZombie=zombies[Math.floor(Math.random()*zombies.length)];
+    await supabase.from('profiles').upsert({id:uid,gamertag,platform:meta.platform||'Quest',profile_picture:randomZombie},{onConflict:'id'});p=await supabase.from('profiles').select('*').eq('id',uid).maybeSingle();
+    state.modal={type:'profilePicture'};
   }
   const [a,n,priv,threads]=await Promise.all([
     supabase.from('admins').select('user_id').eq('user_id',uid).maybeSingle(),
@@ -382,7 +385,7 @@ function drawerHtml(){
 
 function modalHtml(){
   if(!state.modal)return '';if(state.modal.type==='notifications')return '';
-  if(state.modal.type==='menu')return menuModalHtml();if(state.modal.type==='newDm')return newDmModalHtml();if(state.modal.type==='groupCallSetup')return groupCallSetupModalHtml();if(state.modal.type==='auth')return authModalHtml();if(state.modal.type==='invite')return inviteModalHtml();if(state.modal.type==='player')return playerModalHtml();if(state.modal.type==='tournament')return tournamentModalHtml();if(state.modal.type==='result')return resultModalHtml();if(state.modal.type==='report')return reportModalHtml();if(state.modal.type==='proof')return proofModalHtml();return '';
+  if(state.modal.type==='profilePicture')return profilePictureModalHtml();if(state.modal.type==='menu')return menuModalHtml();if(state.modal.type==='newDm')return newDmModalHtml();if(state.modal.type==='groupCallSetup')return groupCallSetupModalHtml();if(state.modal.type==='auth')return authModalHtml();if(state.modal.type==='invite')return inviteModalHtml();if(state.modal.type==='player')return playerModalHtml();if(state.modal.type==='tournament')return tournamentModalHtml();if(state.modal.type==='result')return resultModalHtml();if(state.modal.type==='report')return reportModalHtml();if(state.modal.type==='proof')return proofModalHtml();return '';
 }
 
 function modalWrap(body,narrow=false){return `<div class="modal-wrap" id="modalWrap"><div class="modal ${narrow?'narrow':''}"><div class="modal-body">${body}</div></div></div>`;}
@@ -407,6 +410,12 @@ function authModalHtml(){
 }
 function authGateHtml(){
   return `<div class="auth-gate"><div class="home-zombie-hero auth-gate-hero"><img src="./zc2-zombie-smash-promo.png?v=4" alt="ZC2 Arena Zombie Smash"><div class="home-zombie-copy"><span class="live-pill"><i></i>ZC2 ARENA</span><h1>ZOMBIE<br><em>SMASH</em></h1><p>Survive the horde, fight six named bosses and chase the global leaderboard in vertical or horizontal play. Sign in below to unlock Community Arena and start playing.</p><div class="home-game-stats"><span><b>6</b><small>BOSSES</small></span><span><b>2</b><small>ORIENTATIONS</small></span><span><b>∞</b><small>FINAL WAVE</small></span></div></div></div><div class="auth-gate-formwrap"><div class="modal narrow auth-gate-modal"><div class="modal-body"><div class="auth-gate-brand"><img src="./community-arena-emblem.png?v=4" alt=""><span class="brand-copy"><span class="brand-title"><strong>ZC2</strong></span><span class="brand-rule"></span><small>COMMUNITY ARENA</small></span></div><div class="modal-head"><div><span class="kicker">ACCOUNT</span><h2>Sign in to continue</h2><p>Create a free account or sign in to explore Community Arena and play Zombie Smash.</p></div></div>${authFormFields()}</div></div></div></div>`;
+}
+
+function profilePictureModalHtml(){
+  const zombies=[{id:'jordan',name:'Jordan',img:'boss-jordan-stage1.png'},{id:'glowinghumanity',name:'Glowing Humanity',img:'boss-glowinghumanity-stage1.png'},{id:'debo',name:'Debo',img:'boss-debo-stage1.png'},{id:'caffeinatedsloth',name:'Caffeinated Sloth',img:'boss-caffeinatedsloth-stage1.png'},{id:'fatamy',name:'Fat Amy',img:'boss-fatamy-stage1.png'},{id:'drmantis',name:'Dr Mantis',img:'boss-drmantis-stage1.png'}];
+  const avatarHtml=zombies.map(z=>`<button class="profile-zombie-choice" data-zombie="${z.id}"><img src="./${z.img}" alt="${z.name}"><span>${z.name}</span></button>`).join('');
+  return modalWrap(`<div class="modal-head"><div><span class="kicker">PLAYER PROFILE</span><h2>Choose your profile picture</h2><p>Pick one of the six bosses or we'll pick a random one for you.</p></div></div><div class="profile-zombie-grid">${avatarHtml}</div><div class="profile-picture-actions"><button class="btn secondary" id="randomProfilePictureBtn">${icon('shuffle')}Random assignment</button><button class="btn primary" id="saveProfilePictureBtn" disabled>Confirm selection</button></div>`,true);
 }
 
 function inviteModalHtml(){const link=state.modal.link||baseUrl();return modalWrap(`<div class="modal-head"><div><span class="kicker">INVITE</span><h2>${state.modal.title||'Join the community'}</h2><p>Share this link by email, text, copy/paste or the device share sheet used by Quest and other apps.</p></div><button class="icon-btn" data-close-modal>${icon('close')}</button></div><div class="invite-actions"><button id="inviteEmail">${icon('mail')}Email</button><button id="inviteSms">${icon('sms')}Phone / SMS</button><button id="inviteCopy">${icon('content_copy')}Copy link</button><button id="inviteNative">${icon('share')}Quest / apps</button></div><div class="invite-link">${esc(link)}</div><img class="invite-artwork" src="./community-arena-join.webp?v=4" alt="Join ZC2 Community Arena">`,true);}
@@ -556,6 +565,11 @@ function bindModal(){
   if(state.modal.type==='auth')bindAuthModal();if(state.modal.type==='invite')bindInviteModal();if(state.modal.type==='player'){$('[data-dm-from-profile]')?.addEventListener('click',e=>{const id=e.currentTarget.dataset.dmFromProfile;state.modal=null;state.page='chat';openDm(id);});$('[data-call-player]')?.addEventListener('click',e=>startDirectCall(e.currentTarget.dataset.callPlayer,e.currentTarget.dataset.callName));}
   if(state.modal.type==='tournament'){$('#submitResultBtn')?.addEventListener('click',()=>{if(state.portal)state.modal={type:'result',match:{...state.portal,players:state.portal.players||[]}};render();});$$('[data-report-player]').forEach(b=>b.onclick=()=>{state.modal={type:'report',target:{id:b.dataset.reportPlayer,gamertag:b.dataset.reportName},matchId:state.portal.match_id};render();});}
   if(state.modal.type==='result')bindResultModal();if(state.modal.type==='report')$('#submitReportBtn')?.addEventListener('click',submitReport);
+  if(state.modal.type==='profilePicture'){
+    $$('.profile-zombie-choice').forEach(b=>b.addEventListener('click',function(){$$('.profile-zombie-choice').forEach(x=>x.classList.remove('selected'));this.classList.add('selected');$('#saveProfilePictureBtn').disabled=false;}));
+    $('#randomProfilePictureBtn')?.addEventListener('click',()=>{$$('.profile-zombie-choice').forEach(x=>x.classList.remove('selected'));$('#saveProfilePictureBtn').disabled=false;const selected=$('.profile-zombie-choice');if(selected)selected.classList.add('selected');});
+    $('#saveProfilePictureBtn')?.addEventListener('click',saveProfilePicture);
+  }
 }
 
 function openAuth(){state.modal={type:'auth',mode:'signin'};render();}
@@ -807,6 +821,20 @@ function startCallTimer(){clearInterval(updateCallTimer.interval);updateCallTime
 function updateCallTimer(){const el=$('#callTimer');const started=state.call.startedAt||state.groupCall.startedAt;if(!el||!started)return;const total=Math.max(0,Math.floor((Date.now()-started)/1000)),m=Math.floor(total/60),s=total%60;el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
 
 async function uploadAvatar(file){if(!state.session||!file)return;try{const blob=await resizeImage(file,1000,.88);await saveAvatarBlob(blob,'photo');}catch(e){setToast(e.message||'Profile picture upload failed.');}}
+
+async function saveProfilePicture(){
+  const selected=document.querySelector('.profile-zombie-choice.selected');
+  const pictureId=selected?.dataset.zombie;
+  if(!pictureId)return setToast('Please select a profile picture.');
+  try{
+    const {error}=await supabase.from('profiles').update({profile_picture:pictureId,updated_at:new Date().toISOString()}).eq('id',state.session.user.id);
+    if(error)throw error;
+    state.modal=null;
+    setToast('Profile picture saved.');
+    await refreshAll();
+    render();
+  }catch(e){setToast(e.message||'Failed to save profile picture.');}
+}
 
 async function saveProfile(){const gamertag=$('#profileGamertag').value.trim(),platform=$('#profilePlatform').value,region=$('#profileRegion').value.trim(),bio=$('#profileBio').value.trim();if(gamertag.length<2)return setToast('Gamer tag is too short.');const {error}=await supabase.from('profiles').update({gamertag,platform,region,bio,updated_at:new Date().toISOString()}).eq('id',state.session.user.id);if(error)return setToast(error.message);setToast('Profile saved.');await refreshAll();render();}
 async function resizeImage(file,max=1400,quality=.84){
