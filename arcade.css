@@ -51,8 +51,8 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 .zs52-lrbtn{display:block;width:52px;height:52px;border:0;background-color:transparent;background-position:center;background-size:contain;background-repeat:no-repeat;touch-action:none}
 .zs52-lrbtn.left{background-image:url('./control-left.png')}.zs52-lrbtn.right{background-image:url('./control-right.png')}
 .zs52-lrbtn.pressed{transform:translateY(2px) scale(.965);filter:brightness(.78) drop-shadow(0 2px 3px rgba(0,0,0,.45))!important}
-.mode-portrait .zs52-fire{right:16px!important;bottom:8px!important;width:110px!important;height:54px!important}
-.mode-portrait .zs52-fire.flipped{right:auto!important;left:16px!important}
+.mode-portrait .zs52-fire{right:12px!important;bottom:8px!important;width:120px!important;height:54px!important;background-size:contain!important}
+.mode-portrait .zs52-fire.flipped{right:auto!important;left:12px!important}
 .mode-portrait .zs52-ticker{left:158px!important;right:136px!important;bottom:28px!important;min-height:30px;padding:6px 4px!important;display:grid;place-items:center;font-size:7px!important;background:rgba(4,6,7,.78)!important}
 
 /* Landscape — PSP layout. Controls live on the side pods, not on top of the game. */
@@ -69,11 +69,12 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 .zs52-skin-grid{overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important}
 
 @media(max-width:760px){
- .mode-portrait .zs52-screen{left:14px!important;right:14px!important;top:39px!important;bottom:142px!important}
- .mode-portrait .zs52-move-zone{left:20px!important;bottom:22px!important;width:120px!important;height:60px!important}
+ .mode-portrait .zs52-screen{left:14px!important;right:14px!important;top:39px!important;bottom:136px!important}
+ .mode-portrait .zs52-move-zone{left:16px!important;bottom:8px!important;width:120px!important;height:54px!important}
  .zs52-lrbtn{width:56px!important;height:56px!important}
- .mode-portrait .zs52-fire{right:20px!important;bottom:22px!important;width:120px!important;height:60px!important}
- .mode-portrait .zs52-ticker{left:150px!important;right:128px!important;bottom:26px!important}
+ .mode-portrait .zs52-fire{right:12px!important;bottom:8px!important;width:128px!important;height:54px!important}
+ .mode-portrait .zs52-fire.flipped{right:auto!important;left:12px!important}
+ .mode-portrait .zs52-ticker{left:148px!important;right:148px!important;bottom:12px!important}
  .zs52-skin-grid{max-height:390px!important}
 }
 @media(orientation:landscape) and (max-height:520px){
@@ -132,7 +133,7 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 .mode-landscape .zs52-move-zone{left:0!important;right:auto!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:min(var(--zsPod),130px)!important;height:min(var(--zsPod),130px)!important;display:grid;place-items:center}
 .mode-landscape .zs52-move-zone.flipped{left:auto!important;right:0!important}
 .mode-landscape .zs52-joystick{width:82%!important;height:82%!important}
-.mode-landscape .zs52-fire{left:auto!important;right:0!important;top:64%!important;bottom:auto!important;transform:translateY(-50%)!important;width:min(calc(var(--zsPod) * .78),102px)!important;height:min(calc(var(--zsPod) * .78),102px)!important}
+ing">.mode-landscape .zs52-fire{left:auto!important;right:0!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:min(calc(var(--zsPod) * .8),90px)!important;height:min(calc(var(--zsPod) * .8),90px)!important}
 .mode-landscape .zs52-fire.flipped{right:auto!important;left:0!important}
 .mode-landscape .zs52-grenade{left:auto!important;right:calc(var(--zsPod)/2)!important;top:24%!important;bottom:auto!important;transform:translate(50%,-50%)!important;width:min(calc(var(--zsPod) * .5),54px)!important;height:min(calc(var(--zsPod) * .5),54px)!important;aspect-ratio:1!important}
 .mode-landscape .zs52-topbtn{top:auto!important;bottom:var(--zsBorder)!important;width:25vw!important;max-width:230px;min-width:120px;height:34px!important;border-radius:5px;display:flex!important;align-items:center;justify-content:center;gap:5px}
