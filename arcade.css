@@ -222,19 +222,19 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
   transform:scale(.92)!important;filter:brightness(.82)!important
 }
 
-/* Move zone positioning in portrait (top of control panel) */
+/* Move zone positioning in portrait (bottom left of control panel) */
 .mode-portrait .zs52-move-zone{
-  position:absolute!important;left:3%!important;bottom:10.2%!important;
-  width:22%!important;height:4.8%!important;
+  position:absolute!important;left:2.5%!important;bottom:0.8%!important;
+  width:22%!important;height:9.6%!important;
   display:grid!important;place-items:center!important
 }
-.mode-portrait .zs52-move-zone.flipped{left:auto!important;right:3%!important}
+.mode-portrait .zs52-move-zone.flipped{left:auto!important;right:2.5%!important}
 
-/* Fire button positioning in portrait (bottom right of control panel) */
+/* Fire button positioning in portrait (bottom right of control panel, aligned with move-zone) */
 .mode-portrait .zs52-fire{
   position:absolute!important;right:2.5%!important;bottom:0.8%!important;
-  width:23%!important;height:9.6%!important;
-  background-size:contain!important;background-position:center!important
+  width:21%!important;height:9.6%!important;
+  background-size:contain!important;background-position:center!important;border-radius:8px!important
 }
 .mode-portrait .zs52-fire.flipped{right:auto!important;left:2.5%!important}
 
