@@ -45,6 +45,7 @@ const formatHelp = {
   'Head Hunter':'Headshot-focused competition. Use screenshot evidence and organiser verification.',
   'Marksman':'Accuracy-focused competition. Use end-screen evidence and organiser verification.'
 };
+const PROFILE_AVATARS=[{id:'jordan',name:'Jordan',img:'boss-jordan-stage1.png'},{id:'glowinghumanity',name:'Glowing Humanity',img:'boss-glowinghumanity-stage1.png'},{id:'debo',name:'Debo',img:'boss-debo-stage1.png'},{id:'caffeinatedsloth',name:'Caffeinated Sloth',img:'boss-caffeinatedsloth-stage1.png'},{id:'fatamy',name:'Fat Amy',img:'boss-fatamy-stage1.png'},{id:'drmantis',name:'Dr Mantis',img:'boss-drmantis-stage1.png'}];
 
 function setToast(msg){ state.toast=msg; renderToast(); clearTimeout(setToast.t); setToast.t=setTimeout(()=>{state.toast='';renderToast();},4200); }
 function renderToast(){ let t=$('.toast'); if(!state.toast){t?.remove();return;} if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t);} t.innerHTML=`${icon('info')}<span>${esc(state.toast)}</span>`; }
