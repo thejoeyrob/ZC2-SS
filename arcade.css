@@ -162,7 +162,7 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 /* Screen positioned with proportional spacing */
 .mode-portrait .zs52-screen{
   left:2.6%!important;right:2.6%!important;
-  top:4.2%!important;bottom:15.2%!important;
+  top:4.8%!important;bottom:18.2%!important;
   aspect-ratio:auto!important
 }
 
@@ -181,7 +181,7 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
   min-width:52px!important;min-height:52px!important
 }
 .mode-portrait .zs52-grenade{
-  bottom:calc(7.6% - 3.4%)!important
+  bottom:10.4%!important
 }
 .zs52-grenade::before{
   content:"";position:absolute;inset:-6px;border-radius:50%;
@@ -204,7 +204,7 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 
 /* Menu and Pause buttons in bottom control panel */
 .zs52-topbtn{
-  position:absolute!important;bottom:1.8%!important;top:auto!important;
+  position:absolute!important;bottom:9.2%!important;top:auto!important;
   height:6.8%!important;width:auto!important;min-width:18%!important;
   border-radius:6px!important;gap:6px!important;
   font:700 2.2vw var(--cond)!important;letter-spacing:.05em!important;
