@@ -7,13 +7,13 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 /* Map-coordinated border colors */
 .zs52-hudbottom.map-concrete>div{border-color:#999999}.zs52-hudbottom.map-desert>div{border-color:#D4A574}.zs52-hudbottom.map-north>div{border-color:#5C8FBE}.zs52-hudbottom.map-hangar>div{border-color:#808080}.zs52-hudbottom.map-wasteland>div{border-color:#A66B3E}.zs52-hudbottom.map-cafe>div{border-color:#6B4423}.zs52-lives{justify-content:flex-start!important;gap:2px!important}.zs52-lives i{font-style:normal;font-size:13px;color:#343b3e;opacity:.45}.zs52-lives i.red{color:#ff4c55;opacity:1}.zs52-lives i.gold{color:#ffd84a;opacity:1;text-shadow:0 0 4px rgba(255,216,74,.7)}.zs52-topbtn{position:absolute;z-index:10;width:54px;height:36px;border:0;background:linear-gradient(180deg,#252c2f,#090c0e);color:#f3d51f;display:grid;place-items:center;box-shadow:inset 0 0 0 1px #465156,0 3px 9px rgba(0,0,0,.45);touch-action:manipulation}.zs52-topbtn .material-symbols-rounded{font-size:22px}.zs52-topbtn.menu{left:14px}.zs52-topbtn.pause{right:14px}.zs52-move-zone{position:absolute;z-index:8}.zs52-dpad{position:relative;width:100%;height:100%;background:url('./control-dpad.png') center/contain no-repeat;filter:drop-shadow(0 5px 7px rgba(0,0,0,.45))}.zs52-dpad button{position:absolute;border:0;background:transparent;touch-action:none}.zs52-dpad button.pressed{background:rgba(245,215,31,.12)}.zs52-dpad .left{left:0;top:28%;width:42%;height:44%}.zs52-dpad .right{right:0;top:28%;width:42%;height:44%}.zs52-dpad .up{left:28%;top:0;width:44%;height:42%}.zs52-dpad .down{left:28%;bottom:0;width:44%;height:42%}.zs52-fire{position:absolute;z-index:8;border:0;background:url('./control-fire.png') center/contain no-repeat;color:transparent;touch-action:none;filter:drop-shadow(0 6px 8px rgba(0,0,0,.5))}.zs52-fire span{opacity:0}.zs52-fire.pressed,.zs52-dpad:has(button.pressed){transform:translateY(2px) scale(.975);filter:brightness(.82) drop-shadow(0 2px 3px rgba(0,0,0,.45))}.zs52-ticker{position:absolute;z-index:9;text-align:center;font:800 8px var(--body);letter-spacing:.06em;color:#cfd5d7;pointer-events:none;background:rgba(4,6,7,.72);border-top:1px solid rgba(245,215,31,.16)}
 /* Portrait / Game Boy layout — iPhone SE fixed aspect ratio (540:960) */
-.zs52-shell.mode-portrait{width:min(100vw,calc(100dvh * 9/16));margin:auto;aspect-ratio:9/16}.mode-portrait .zs52-topbtn{top:max(8px,env(safe-area-inset-top,0px))}.mode-portrait .zs52-screen{left:14px;right:14px;top:44px;bottom:130px;aspect-ratio:auto}.mode-portrait .zs52-hudtop{top:6px;left:6px;right:6px}.mode-portrait .zs52-hudbottom{bottom:6px;left:6px;right:6px}.mode-portrait .zs52-move-zone{left:18px;bottom:68px;width:94px;height:94px}.mode-portrait .zs52-move-zone.flipped{left:auto;right:18px}.mode-portrait .zs52-fire{right:18px;bottom:68px;width:98px;height:98px}.mode-portrait .zs52-fire.flipped{right:auto;left:18px}.mode-portrait .zs52-ticker{left:105px;right:105px;bottom:16px;padding:4px 3px}
+.zs52-shell.mode-portrait{width:min(100vw,calc(100dvh * 9/16));margin:auto;aspect-ratio:9/16}.mode-portrait .zs52-topbtn{top:max(8px,env(safe-area-inset-top,0px))}.mode-portrait .zs52-screen{left:14px;right:14px;top:44px;bottom:130px;aspect-ratio:auto}.mode-portrait .zs52-hudtop{top:6px;left:6px;right:6px}.mode-portrait .zs52-hudbottom{bottom:6px;left:6px;right:6px}.mode-portrait .zs52-move-zone{left:18px;bottom:68px;width:94px;height:94px}.mode-portrait .zs52-move-zone.flipped{left:auto;right:18px}.mode-portrait .zs52-ticker{left:105px;right:105px;bottom:16px;padding:4px 3px}
 /* Landscape / PSP layout — extended gameplay, single bottom info bar */
-.zs52-shell.mode-landscape{width:100vw;height:100dvh}.mode-landscape .zs52-screen{left:88px;right:88px;top:8px;bottom:50px}.mode-landscape .zs52-topbtn{top:10px}.mode-landscape .zs52-topbtn.menu{left:10px}.mode-landscape .zs52-topbtn.pause{right:10px}.mode-landscape .zs52-move-zone{left:8px;top:50%;transform:translateY(-50%);width:80px;height:80px}.mode-landscape .zs52-move-zone.flipped{left:auto;right:8px}.mode-landscape .zs52-fire{right:8px;top:50%;transform:translateY(-50%);width:80px;height:80px}.mode-landscape .zs52-fire.flipped{right:auto;left:8px}.mode-landscape .zs52-ticker{left:96px;right:96px;bottom:8px;padding:4px;font-size:7px}.mode-landscape .zs52-hudtop{display:none}.mode-landscape .zs52-hudbottom{left:96px;right:96px;bottom:6px;grid-template-columns:repeat(4,1fr);gap:5px}
+.zs52-shell.mode-landscape{width:100vw;height:100dvh}.mode-landscape .zs52-screen{left:88px;right:88px;top:8px;bottom:50px}.mode-landscape .zs52-topbtn{top:10px}.mode-landscape .zs52-topbtn.menu{left:10px}.mode-landscape .zs52-topbtn.pause{right:10px}.mode-landscape .zs52-move-zone{left:8px;top:50%;transform:translateY(-50%);width:80px;height:80px}.mode-landscape .zs52-move-zone.flipped{left:auto;right:8px}.mode-landscape .zs52-ticker{left:96px;right:96px;bottom:8px;padding:4px;font-size:7px}.mode-landscape .zs52-hudtop{display:none}.mode-landscape .zs52-hudbottom{left:96px;right:96px;bottom:6px;grid-template-columns:repeat(4,1fr);gap:5px}
 /* Paused menu — intentionally scrollable on iOS */
 .zs52-menu-layer{position:absolute;inset:0;z-index:30;display:grid;place-items:center;padding:12px;background:rgba(0,0,0,.72);backdrop-filter:blur(10px)}.zs52-menu-box{width:min(94%,640px);max-height:88dvh;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;border:1px solid #48545a;background:linear-gradient(180deg,#12191c,#080b0d);padding:14px;box-shadow:0 25px 70px rgba(0,0,0,.65)}.zs52-menu-box header{display:flex;align-items:center;justify-content:space-between}.zs52-menu-box h2{font:900 30px var(--cond);margin:2px 0}.zs52-menu-box header>button{width:38px;height:38px;border:1px solid #455158;background:#0e1417;color:#fff}.zs52-menu-box nav{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:10px 0}.zs52-menu-box nav button{height:38px;border:1px solid #333e43;background:#0d1316;color:#fff;text-transform:capitalize}.zs52-menu-box nav button.active{background:#efd321;color:#101213;border-color:#ffe65b}.zs52-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.zs52-run{grid-column:1/-1;padding:10px;border:1px solid rgba(245,215,31,.28);background:rgba(245,215,31,.06)}.zs52-run b,.zs52-run span{display:block}.zs52-run-reason{font-family:"Nosifer","Barlow Condensed",sans-serif;font-style:normal;color:#ffcf7a;margin:6px 0 10px;font-size:13px;line-height:1.5;letter-spacing:.02em}.zs52-menu-skins{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:none;overflow:visible;touch-action:pan-y}.zs52-menu-skin{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;align-items:center;padding:8px;border:1px solid #354147;background:#0e1417;color:#fff;text-align:left}.zs52-menu-skin img{width:96px;height:52px;object-fit:cover}.zs52-menu-skin span b,.zs52-menu-skin span small{display:block}.zs52-menu-skin span small{font-size:8px;color:#879398}.zs52-menu-skin.active{border-color:#dfca24;box-shadow:inset 3px 0 #f3d51f}.zs52-menu-skin.locked{opacity:.45}.zs52-menu-board{touch-action:pan-y}.zs52-instructions{display:grid;gap:7px}.zs52-instructions article{padding:10px;border:1px solid #303b40;background:#0d1316}.zs52-instructions b,.zs52-instructions span{display:block}.zs52-instructions span{font-size:10px;color:#9ba6aa;line-height:1.45}.zs52-code{display:grid;grid-template-columns:1fr auto;gap:6px;margin-bottom:8px}.zs52-code input{min-height:42px;border:1px solid #354147;background:#080c0e;color:#fff;padding:0 10px}
 .zs52-orient-warning{width:min(92%,480px);display:grid;justify-items:center;text-align:center;gap:10px;padding:28px;border:1px solid #414b50;background:#0b1012}.zs52-orient-warning img{width:88px;height:88px;object-fit:contain}.zs52-orient-warning h2{font:900 38px var(--cond);margin:0}.zs52-orient-warning p{margin:0 0 8px;color:#a9b3b7}
-@media(max-width:760px){.zs510-hero{grid-template-columns:1fr;min-height:0}.zs510-hero>img{height:auto;aspect-ratio:16/8.5;object-fit:cover}.zs510-hero-copy{padding:14px;gap:8px}.zs510-hero h1{font-size:46px}.zs510-hero p{font-size:11px}.zs510-play{min-height:52px}.zs510-focus-grid{grid-template-columns:1fr}.zs52-skin-grid{grid-template-columns:1fr;max-height:330px}.zs510-community-links{grid-template-columns:1fr 1fr}.zs52-shell.mode-portrait{width:100vw}.mode-portrait .zs52-screen{left:16px;right:16px;top:45px;bottom:120px}.mode-portrait .zs52-move-zone{left:12px;bottom:16px;width:82px;height:82px}.mode-portrait .zs52-fire{right:14px;bottom:12px;width:92px;height:92px}.mode-portrait .zs52-ticker{left:103px;right:111px;bottom:18px;font-size:7px}.zs52-hudtop b{font-size:15px}.zs52-hudbottom b{font-size:11px}.zs52-menu-skins{grid-template-columns:1fr}.zs52-menu-box{max-height:91dvh}.zs52-menu-box nav button{font-size:10px}}
+@media(max-width:760px){.zs510-hero{grid-template-columns:1fr;min-height:0}.zs510-hero>img{height:auto;aspect-ratio:16/8.5;object-fit:cover}.zs510-hero-copy{padding:14px;gap:8px}.zs510-hero h1{font-size:46px}.zs510-hero p{font-size:11px}.zs510-play{min-height:52px}.zs510-focus-grid{grid-template-columns:1fr}.zs52-skin-grid{grid-template-columns:1fr;max-height:330px}.zs510-community-links{grid-template-columns:1fr 1fr}.zs52-shell.mode-portrait{width:100vw}.mode-portrait .zs52-screen{left:16px;right:16px;top:45px;bottom:95px}.mode-portrait .zs52-ticker{left:100px!important;right:100px!important;bottom:10%!important;font-size:7px}.zs52-hudtop b{font-size:15px}.zs52-hudbottom b{font-size:11px}.zs52-menu-skins{grid-template-columns:1fr}.zs52-menu-box{max-height:91dvh}.zs52-menu-box nav button{font-size:10px}}
 @media(orientation:landscape) and (max-height:520px){.mode-landscape .zs52-screen{left:98px;right:98px;top:12px;bottom:12px}.mode-landscape .zs52-move-zone{width:80px;height:80px;left:8px}.mode-landscape .zs52-fire{width:80px;height:80px;right:8px}.mode-landscape .zs52-topbtn{width:42px;height:30px}.mode-landscape .zs52-hudbottom{left:27%;right:27%;bottom:3px}.mode-landscape .zs52-ticker{font-size:6px;padding-left:94px;padding-right:94px}}
 
 /* v5.10.1 — material shell / maximum-screen correction
@@ -51,8 +51,6 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 .zs52-lrbtn{display:block;width:52px;height:52px;border:0;background-color:transparent;background-position:center;background-size:contain;background-repeat:no-repeat;touch-action:none}
 .zs52-lrbtn.left{background-image:url('./control-left.png')}.zs52-lrbtn.right{background-image:url('./control-right.png')}
 .zs52-lrbtn.pressed{transform:translateY(2px) scale(.965);filter:brightness(.78) drop-shadow(0 2px 3px rgba(0,0,0,.45))!important}
-.mode-portrait .zs52-fire{right:12px!important;bottom:8px!important;width:120px!important;height:54px!important;background-size:contain!important}
-.mode-portrait .zs52-fire.flipped{right:auto!important;left:12px!important}
 .mode-portrait .zs52-ticker{left:158px!important;right:136px!important;bottom:28px!important;min-height:30px;padding:6px 4px!important;display:grid;place-items:center;font-size:7px!important;background:rgba(4,6,7,.78)!important}
 
 /* Landscape — PSP layout. Controls live on the side pods, not on top of the game. */
@@ -69,18 +67,15 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 .zs52-skin-grid{overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important}
 
 @media(max-width:760px){
- .mode-portrait .zs52-screen{left:14px!important;right:14px!important;top:39px!important;bottom:136px!important}
- .mode-portrait .zs52-move-zone{left:16px!important;bottom:8px!important;width:120px!important;height:54px!important}
+ .mode-portrait .zs52-screen{left:14px!important;right:14px!important;top:39px!important;bottom:100px!important}
+ .mode-portrait .zs52-move-zone{left:3%!important;bottom:0.8%!important;width:22%!important;height:9.6%!important}
  .zs52-lrbtn{width:56px!important;height:56px!important}
- .mode-portrait .zs52-fire{right:12px!important;bottom:8px!important;width:128px!important;height:54px!important}
- .mode-portrait .zs52-fire.flipped{right:auto!important;left:12px!important}
- .mode-portrait .zs52-ticker{left:148px!important;right:148px!important;bottom:12px!important}
+ .mode-portrait .zs52-ticker{left:28%!important;right:28%!important;bottom:10.6%!important}
  .zs52-skin-grid{max-height:390px!important}
 }
 @media(orientation:landscape) and (max-height:520px){
  .mode-landscape .zs52-screen{left:72px!important;right:72px!important;top:10px!important;bottom:10px!important}
  .mode-landscape .zs52-move-zone{left:4px!important;width:64px!important;height:64px!important}
- .mode-landscape .zs52-fire{right:4px!important;width:66px!important;height:66px!important}
  .mode-landscape .zs52-hudtop{left:38px!important;right:38px!important}
  .mode-landscape .zs52-ticker{left:74px!important;right:74px!important}
 }
@@ -133,7 +128,7 @@ body.zs52-playing #app{visibility:hidden!important;pointer-events:none!important
 .mode-landscape .zs52-move-zone{left:0!important;right:auto!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:min(var(--zsPod),130px)!important;height:min(var(--zsPod),130px)!important;display:grid;place-items:center}
 .mode-landscape .zs52-move-zone.flipped{left:auto!important;right:0!important}
 .mode-landscape .zs52-joystick{width:82%!important;height:82%!important}
-ing">.mode-landscape .zs52-fire{left:auto!important;right:0!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:min(calc(var(--zsPod) * .8),90px)!important;height:min(calc(var(--zsPod) * .8),90px)!important}
+.mode-landscape .zs52-fire{left:auto!important;right:0!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:min(calc(var(--zsPod) * .8),90px)!important;height:min(calc(var(--zsPod) * .8),90px)!important}
 .mode-landscape .zs52-fire.flipped{right:auto!important;left:0!important}
 .mode-landscape .zs52-grenade{left:auto!important;right:calc(var(--zsPod)/2)!important;top:24%!important;bottom:auto!important;transform:translate(50%,-50%)!important;width:min(calc(var(--zsPod) * .5),54px)!important;height:min(calc(var(--zsPod) * .5),54px)!important;aspect-ratio:1!important}
 .mode-landscape .zs52-topbtn{top:auto!important;bottom:var(--zsBorder)!important;width:25vw!important;max-width:230px;min-width:120px;height:34px!important;border-radius:5px;display:flex!important;align-items:center;justify-content:center;gap:5px}
@@ -236,12 +231,13 @@ ing">.mode-landscape .zs52-fire{left:auto!important;right:0!important;top:50%!im
 }
 .mode-portrait .zs52-move-zone.flipped{left:auto!important;right:3%!important}
 
-/* Fire button positioning in portrait (top right of control panel) */
+/* Fire button positioning in portrait (bottom right of control panel) */
 .mode-portrait .zs52-fire{
-  position:absolute!important;right:3%!important;bottom:10.2%!important;
-  width:22%!important;height:4.8%!important
+  position:absolute!important;right:2.5%!important;bottom:0.8%!important;
+  width:23%!important;height:9.6%!important;
+  background-size:contain!important;background-position:center!important
 }
-.mode-portrait .zs52-fire.flipped{right:auto!important;left:3%!important}
+.mode-portrait .zs52-fire.flipped{right:auto!important;left:2.5%!important}
 
 /* Accuracy bonus badge — positioned in HUD */
 .zs52-accuracy-badge{
@@ -271,8 +267,8 @@ ing">.mode-landscape .zs52-fire{left:auto!important;right:0!important;top:50%!im
 @media(max-width:480px){
   .zs52-topbtn{font-size:10px!important;padding:0 8px!important;min-width:70px!important;height:42px!important}
   .zs52-topbtn .material-symbols-rounded{font-size:16px}
-  .mode-portrait .zs52-move-zone{width:20%!important;height:4.4%!important}
-  .mode-portrait .zs52-fire{width:20%!important;height:4.4%!important}
+  .mode-portrait .zs52-move-zone{width:22%!important;height:9.6%!important}
+  .mode-portrait .zs52-fire{width:23%!important;height:9.6%!important}
   .zs52-grenade{min-width:48px!important;min-height:48px!important}.zs52-grenade::before{border-width:1.5px;inset:-3px}
   .zs52-accuracy-badge{width:28px!important;height:28px!important;font-size:9px!important;bottom:-6px!important;right:-14px!important}
 }
