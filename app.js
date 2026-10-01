@@ -415,8 +415,7 @@ function authGateHtml(){
 }
 
 function profilePictureModalHtml(){
-  const zombies=[{id:'jordan',name:'Jordan',img:'boss-jordan-stage1.png'},{id:'glowinghumanity',name:'Glowing Humanity',img:'boss-glowinghumanity-stage1.png'},{id:'debo',name:'Debo',img:'boss-debo-stage1.png'},{id:'caffeinatedsloth',name:'Caffeinated Sloth',img:'boss-caffeinatedsloth-stage1.png'},{id:'fatamy',name:'Fat Amy',img:'boss-fatamy-stage1.png'},{id:'drmantis',name:'Dr Mantis',img:'boss-drmantis-stage1.png'}];
-  const avatarHtml=zombies.map(z=>`<button class="profile-zombie-choice" data-zombie="${z.id}"><img src="./${z.img}" alt="${z.name}"><span>${z.name}</span></button>`).join('');
+  const avatarHtml=PROFILE_AVATARS.map(z=>`<button class="profile-zombie-choice" data-zombie="${z.id}"><img src="./${z.img}" alt="${z.name}"><span>${z.name}</span></button>`).join('');
   return modalWrap(`<div class="modal-head"><div><span class="kicker">PLAYER PROFILE</span><h2>Choose your profile picture</h2><p>Pick one of the six bosses or we'll pick a random one for you.</p></div></div><div class="profile-zombie-grid">${avatarHtml}</div><div class="profile-picture-actions"><button class="btn secondary" id="randomProfilePictureBtn">${icon('shuffle')}Random assignment</button><button class="btn primary" id="saveProfilePictureBtn" disabled>Confirm selection</button></div>`,true);
 }
 
